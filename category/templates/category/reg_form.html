@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sale{% endblock %}</title>
+    {% load staticfiles %}
+    <link href='https://fonts.googleapis.com/css?family-satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'category/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'category/style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+</head>
+<body>
+ <nav class="navbar navbar-default navbar-fixed-top " id="navBar">
+
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/categry/" id="nepDealText">NepDeals
+                                <span
+                                        class="glyphicon glyphicon-home">
+                                </span>
+                             </a>
+
+
+</div>
+ </nav>
+
+ <div class="container">
+ <li>
+     <h1> You can register here</h1>
+     <h1> Reigster HERE!!!</h1>
+ </li>
+
+
+<form method ="post">
+    {% csrf_token %}
+    {{form.as_p}}
+     <button type="submit" button class="btn btn-sm btn-primary " type="submit">Register</button>
+
+</form>
+
+ </div>

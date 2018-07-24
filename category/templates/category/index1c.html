@@ -1,0 +1,102 @@
+{% extends 'mobiles/basen.html' %}
+
+
+{% block body %}
+
+
+<h3>All Items Here</h3>
+
+<div class=" container-fluid">
+            {% for item in object_list %}
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="thumbnail" >
+                        <a href="{% url 'mobiles:detail' item.id %}">
+                            <img src="{{ item.item_logo.url }}" class="img-responsive">
+                        </a>
+                        <div class="caption">
+                            <h3>{{ item.item_name }}</h3>
+                            <h4> RS {{ item.item_price }}</h4>
+                            <h4>{{item.item_status}}</h4>
+
+
+                            <!-- View Details -->
+                            <a href="{% url 'mobiles:detail' item.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+                             {% if user.is_authenticated %}
+
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+    </div>
+
+
+
+
+
+
+    <style>
+
+
+    .thumbnail h3, .thumbnail h4,.thumbnail a {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+    </style>
+
+    <style>
+    .caption{
+        max-height: 3.3em;
+    }
+    .thumbnail{
+        width: 90%;
+        height: 300px;
+    }
+    .thumbnail:hover {
+  background: #20b2aa;
+}
+
+.thumbnail a > img {
+  height: 120px;
+  width: 180px;
+}
+    </style>
+
+<div class="items-container container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            {% if user.is_authenticated %}
+            <div class="col-sm-12">
+                 <ul class="nav navbar-nav navbar-right">
+                <br>
+                <a href="mobiles/item/add">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp; Post AD
+                    </button>
+                </a>
+                 </ul>
+            </div>
+{% else %}
+<h5 >Please login first to register your advertisement</h5>
+{% endif %}
+        </div>
+
+                </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+
+
+</div>
+{% endblock %}

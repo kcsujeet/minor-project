@@ -1,0 +1,70 @@
+{% extends "computer/basen.html" %}
+{% block body %}
+<div style="text-align:right">
+
+</div>
+<br>
+
+
+
+<div class=" container-fluid">
+
+            {% for item in item_list %}
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="thumbnail">
+                        <a href="{% url 'computer:detail' item.id %}">
+                            <img src="{{ item.item_logo.url }}" class="img-responsive">
+                        </a>
+                        <div class="caption">
+                            <h3>{{ item.item_name }}</h3>
+                            <h4>{{ item.item_price }}</h4>
+                            <h4>{{item.item_status}}</h4>
+
+
+                            <!-- View Details -->
+                            <a href="{% url 'computer:detail' item.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+     <script>
+    $(".thumbnail").height(Math.max.apply(null, $(".thumbnail").map(function() { return $(this).height(); })));
+    </script>
+    <script>
+    (function() {
+      $(function() {
+            $('.thumbnail').matchHeight({
+                    byRow: true,
+                    property: 'height',
+                    target: null,
+                    remove: false
+            });
+      });
+ })();
+    </script>
+
+    <style>
+    .caption{
+        max-height: 3.3em;
+    }
+    .thumbnail{
+        width: 90%;
+    }
+    .thumbnail:hover {
+  background: #f7f7f7;
+}
+
+.thumbnail a > img {
+  height: 120px;
+  width: 180px;
+}
+    </style>
+
+
+    </div>
+
+
+
+{% endblock %}

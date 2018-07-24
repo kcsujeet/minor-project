@@ -1,0 +1,26 @@
+{% extends 'category/basen.html' %}
+{% block body %}
+
+<font face="verdana" color="green">PLEASE ENTER VALID USERNAME AND PASSWORD!</font>
+THANK YOU»
+
+<div class="container">
+
+    <p>
+        you can login here!
+    </p>
+    <h2>LOGIN</h2>
+    <div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+    <form method ="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit" button class="btn btn-sm btn-primary " type="submit">login</button>
+    </form>
+
+</div>
+    </div>
+     {% endblock %}

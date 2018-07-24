@@ -1,0 +1,82 @@
+{% extends 'category/detailnav.html' %}
+{% block title %}Telvison,Appliances and and camera {% endblock %}
+{% block body %}
+
+    <div class="col-md-9">
+
+<div id="detailsPage">
+     <div class="col-md-5">
+    <div class="thumbnail" style="">
+      <a href="{{ item.item_logo.url }}">
+        <img  class="img-responsive" src ="{{ item.item_logo.url }}" alt="Lights" style="width:100%" >
+        <div class="caption">
+          <h3 class="text-primary">{{ item.item_name }}</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+
+    <div class="col-md-7" >
+<div class="panel panel-default">
+    <div class="panel-heading"><h3>General Details</h3></div>
+      <div class="panel-body">
+          <h4 class="text-primary">Price: {{ item.item_price}}</h4>
+        <h4 class="text-primary">Condition: {{ item.item_status }}</h4>
+      </div>
+    </div>
+    </div>
+
+ <div class="col-md-7">
+<div class="panel panel-default">
+    <div class="panel-heading"><h3>Seller Details</h3></div>
+      <div class="panel-body">
+          <h4 class="text-primary">Sold By: {{ item.item_price}}</h4>
+        <h4 class="text-primary">Mobile No: {{ item.item_status }}</h4>
+          <h4 class="text-primary">Location: {{ item.item_status }}</h4>
+      </div>
+    </div>
+    </div>
+
+<div class="col-md-12">
+<div class="panel panel-default">
+    <div class="panel-heading"><h3>Description</h3></div>
+      <div class="panel-body">
+          <h5 class="text-primary">
+          -Totally in brand new condition & have no any single scratch <br>
+-Very attractive & fashionable slim in gunmetal colour <br>
+-Weight: 158g<br>
+-Dimensions: 152.7 x 74.7 x 7.35mm<br>
+-OS: Android 7.1.1<br>
+-Screen size: 5.5-inch<br>
+-Resolution: 1920 x 1080<br>
+-CPU: Snapdragon 821<br>
+-RAM: 6GB<br>
+-Storage: 64<br>
+-Battery: 3,400mAh<br>
+-Rear camera: 16MP<br>
+-Front camera: 16MP<br>
+          </h5>
+      </div>
+    </div>
+    </div>
+
+</div>
+    </div>
+
+    <style>
+    #detailsPage{
+        padding-top: 30px;
+    }
+    #productDetails{
+        padding-left: 20px;
+    }
+    </style>
+
+
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Sale{% endblock %}</title>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="category/static/category/style.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top " id="navBar">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/categry/" id="nepDealText">
+                                <span
+                                        class="glyphicon glyphicon-home">
+                                </span>
+                             </a>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                        </div>
+
+                        <li class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <form class="navbar-form navbar-right " method='GET' action="#"role="search">
+                <div class="input-group pull-right" >
+                    <input type="text" name='q' class="form-control" placeholder="Search this item" value="{{searchvalue}}">
+                    <span class="input-group-btn">
+                        <button type="submit"value="search" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+
+            </form>
+
+                                {% if user.is_authenticated %}
+                                    <li><a href="/categry/logout/" id="logout"><span class="glyphicon glyphicon-off"></span> logout</a></li>
+                                    <li><a href="/categry/profile" id="profile"><span class="glyphicon glyphicon-user "></span> Profile</a></li>
+                                    <li><a href="/categry/profile/edit/" id="edit"><span class="glyphicon glyphicon-pencil"></span>Edit profile</a></li>
+
+                                {% else %}
+                     <li><a href="/categry/register/" id="signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="/categry/login/" id="logIn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                     {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+
+                </nav>
+
+
+<div id="masthead">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 style="color: white">NepDeals
+            <p class="lead">The easiest way to sell your Stuffs</p>
+          </h1>
+        </div>
+            {% if user.is_authenticated %}
+                   <div  class="btn-group ,input-group pull-right"> <a class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" href="#" id="btnCountry">Post your AD<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="/computer/item/add">Computer And Gamming</a></li>
+                <li><a href="/electronics/item/add"> Consumer Electronics</a></li>
+                <li><a href="/automobiles/item/add">Automobiles</a></li>
+                <li><a href="/mobiles/item/add">Mobiles</a></li>
+                <li><a href="/apparels/item/add"> Accessories And Apparels</a></li>
+            </ul>
+        </div>
+                  {% endif %}
+        <div class="col-md-5">
+            <div class="well well-lg">
+              <div class="row">
+                <div class="col-sm-6">
+        	      	<img src="https://www.shoptab.net/blog/wp-content/uploads/2011/11/daily-deal-ShopTab.jpg" class="img-responsive">
+                </div>
+                <div class="col-sm-6">
+                  	<h2 style="color: white"> Welcome </h2>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+  </div><!-- /cont -->
+</div>
+
+<!-- Begin Body -->
+<!-- Based on http://bootsnipp.com/snippets/featured/responsive-sidebar-menu -->
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="col-md-3 col-xs-12 col-sm-12">
+<nav class="nav navbar-m2p sidebar" role="navigation" id="sideBar2">
+    <div class="container-fluid" >
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <b> Categories</b>
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!-- Dashboard -->
+
+                <li>
+                     <a href="/computer/" >
+                      <span class="pull-right hidden-xs showopacity glyphicon material-icons">av_computer</span> Computer/Gamming
+
+                  </a>
+                     <a href="/automobiles/">
+                      <span class="pull-right hidden-xs showopacity glyphicon material-icons">av_traffic</span> Automobiles
+
+                     </a>
+                     <a href="/apparels/">
+                      <span class="pull-right hidden-xs showopacity glyphicon material-icons">av_camera</span> Acessories and Apparels
+                  </a>
+                     <a href="/electronics/">
+
+                                <span class="pull-right hidden-xs showopacity glyphicon material-icons">av_phone</span> Consumer Electronics
+                  </a>
+                     <a href="/mobiles/">
+                      <span class="pull-right hidden-xs showopacity glyphicon material-icons">av_smartphone</span> Mobile/Acessories
+                  </a>
+
+                </li>
+                <!-- Banner -->
+
+                </li>
+                <li class="separator">Content</li>
+                <!-- Page -->
+                <li class="">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">description</span>
+                        Pages <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <!-- Blog -->
+                <li class="">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">chat_bubble_outline</span>
+                        Blog <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <!-- Tags -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon material-icons">label</span>
+                        Tags <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"> <i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"> <i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+                <li class="separator">System</li>
+                <!-- Users -->
+                <li class="#">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="menu-icon pull-right hidden-xs showopacity glyphicon material-icons">group</span>
+                        Users <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="#"><i class="material-icons">add</i> Add</a></li>
+                        <li><a href="#"><i class="material-icons">sort</i> List</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+    </u1>
+</div>
+
+
+                {% block body %}
+
+                {% endblock %}
+
+            </div>
+    </div>
+</div>
+</body>
+
+
+
+<style>
+    .btn-group{
+    height:30px;}
+</style>
+<style>
+
+
+    body {
+	padding-top:50px;
+}
+
+#masthead {
+	min-height:270px;
+	background-color:#20b2aa;
+  	color:#aaaacc;
+}
+
+#masthead h1 {
+	font-size: 55px;
+	line-height: 1;
+}
+
+#masthead .well {
+	margin-top:13%;
+	background-color:#20b2aa;
+    border: none;
+}
+
+
+.icon-bar {
+	background-color:#fff;
+
+}
+
+@media screen and (min-width: 768px) {
+	#masthead h1 {
+		font-size: 100px;
+	}
+}
+.nav.navbar-nav li a {
+   color: white;
+ }
+
+
+.navbar-fixed-top {
+	background-color:#20b2aa;
+    border: none;
+    }
+
+
+
+
+#nepDealText{
+    color: white;
+}
+
+.affix-top,.affix{
+	position: static;
+}
+
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+  	margin-top:30px;
+  	width:228px;
+  }
+
+  #sidebar.affix-bottom {
+    position: relative;
+  }
+#sec0{
+    padding-bottom: 10px;
+}
+  #sidebar.affix {
+    position: fixed;
+    top:70px;
+    width:228px;
+  }
+}
+
+#sidebar li.active {
+  	border:0 #eee solid;
+  	border-right-width:4px;
+}
+
+#sidebar li li.active {
+  	border:0 #ccc solid;
+  	border-right-width:3px;
+}
+
+#mainCol h2 {
+	padding-top: 55px;
+    margin-top: -55px;
+}
+
+</style>
+<style>
+
+    #sideBar2{
+margin-left: -15px;
+padding-bottom: 150%;
+    }
+
+
+    body,html{
+    height: 100%;
+}
+
+/* remove outer padding */
+.container-main .row{
+    padding: 0px;
+    margin: 0px;
+}
+
+/*Remove rounded coners*/
+
+nav.sidebar.navbar {
+    border-radius: 0px;
+}
+
+nav.sidebar, .container-main{
+    -webkit-transition: margin 200ms ease-out;
+    -moz-transition: margin 200ms ease-out;
+    -o-transition: margin 200ms ease-out;
+    transition: margin 200ms ease-out;
+}
+
+/* Icons */
+.menu-icon {
+    font-size: 20px;
+}
+
+/* Add gap to nav and right windows.*/
+/*.container-main{
+    padding: 10px 10px 0 10px;
+}*/
+
+/* Colors */
+.navbar-m2p {
+    background-color: #20b2aa;
+    border-color: #00464f;
+}
+.navbar-m2p span, .navbar-m2p a {
+    color: #FFFFFF;
+}
+.active .dropdown-toggle {
+    background-color: rgba(126, 169, 39, 0.3);
+    border-color: rgba(126, 169, 39, 0.3);
+}
+.nav .open > a {
+    background-color: rgba(126, 169, 39, 0.3);
+    border-color: rgba(126, 169, 39, 0.3);
+}
+.nav li > a:hover, .nav .open > a:hover,
+.nav li > a:focus, .nav .open > a:focus,
+.nav li > a:active, .nav .open > a:active {
+    background-color: rgba(126, 169, 39, 0.3);
+}
+.nav .open ul > li {
+    background-color: rgba(126, 169, 39, 0.4)
+}
+.navbar-m2p .navbar-nav .open .dropdown-menu>li>a {
+    color: #FFFFFF;
+    padding: 10px;
+}
+/* borda menu active */
+.navbar-m2p .navbar-nav .active a {
+    margin-left: -1px;
+    border-left: 5px solid #7ea927;
+}
+/* Hamburger */
+.navbar-toggle {
+    background-color: transparent;
+    border: 1px solid rgba(126, 169, 39, 0.4);
+}
+.navbar-toggle .icon-bar,
+.navbar-toggle .icon-bar + .icon-bar {
+    background-color: #7ea927;
+}
+
+nav:hover .forAnimate{
+    opacity: 1;
+}
+
+.navbar-m2p .dropdown-menu {
+    padding: 0px;
+}
+
+.nav li.separator {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 39, 0.2);
+    color: rgba(208, 208, 207, 0.4);
+}
+
+/* .....NavBar: Icon only with coloring/layout.....*/
+
+/*small/medium side display*/
+@media (min-width: 768px) {
+
+    /*Allow main to be next to Nav*/
+    .container-main{
+        position: absolute;
+        width: calc(100% - 40px); /*keeps 100% minus nav size*/
+        margin-left: 40px;
+        float: right;
+    }
+
+    /*lets nav bar to be showed on mouseover*/
+    nav.sidebar:hover + .container-main{
+        margin-left: 300px;
+    }
+
+    /*Center Brand*/
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+    /*Center Brand*/
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+        font-size: 25px;
+        line-height: 27px;
+    }
+
+    /*Center Icons*/
+    nav.sidebar a{
+        padding-right: 13px;
+    }
+
+    /* Colors/style dropdown box*/
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    /*allows nav box to use 100% width*/
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+        padding: 0 0px 0 0px;
+    }
+
+    /*gives sidebar width/height*/
+    nav.sidebar{
+        width: 300px;
+        height: 100%;
+        margin-left: -260px;
+        float: left;
+        z-index: 8000;
+        margin-bottom: 0px;
+    }
+
+    /*give sidebar 100% width;*/
+    nav.sidebar li {
+        width: 100%;
+    }
+
+    /* Move nav to full on mouse over*/
+    nav.sidebar:hover{
+        margin-left: 0px;
+    }
+    /*for hiden things when navbar hidden*/
+    .forAnimate{
+        opacity: 0;
+    }
+}
+
+/* .....NavBar: Fully showing nav bar..... */
+
+@media (min-width: 1330px) {
+
+    /*Allow main to be next to Nav*/
+    .container-main{
+        width: calc(100% - 300px); /*keeps 100% minus nav size*/
+        margin-left: 300px;
+    }
+
+    /*Show all nav*/
+    nav.sidebar{
+        margin-left: 0px;
+        float: left;
+    }
+    /*Show hidden items on nav*/
+    nav.sidebar .forAnimate{
+        opacity: 1;
+    }
+}
+</style>
+
+<script>
+    var $body   = $(document.body);
+var navHeight = $('.navbar').outerHeight(true) + 10;
+
+$('#sidebar').affix({
+      offset: {
+        top: 245,
+        bottom: navHeight
+      }
+});
+
+
+$body.scrollspy({
+	target: '#leftCol',
+	offset: navHeight
+});
+</script>
+
+<script>
+    $(document).ready(function() {
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel2').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel3').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel4').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel5').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    function htmlbodyHeightUpdate() {
+    var height3 = $(window).height();
+    var height1 = $('.nav').height() + 50;
+    height2 = $('.container-main').height();
+    if (height2 > height3) {
+        $('html').height(Math.max(height1, height3, height2) + 10);
+        $('body').height(Math.max(height1, height3, height2) + 10);
+    } else
+    {
+        $('html').height(Math.max(height1, height3, height2));
+        $('body').height(Math.max(height1, height3, height2));
+    }
+
+}
+$(document).ready(function () {
+    htmlbodyHeightUpdate();
+    $(window).resize(function () {
+        htmlbodyHeightUpdate();
+    });
+    $(window).scroll(function () {
+        height2 = $('.container-main').height();
+        htmlbodyHeightUpdate();
+    });
+});
+</script>
+<script>
+    var fixmeTop = $('#sideBar2').offset().top - 50;       // get initial position of the element
+
+$(window).scroll(function() {                  // assign scroll event listener
+
+    var currentScroll = $(window).scrollTop(); // get current position
+
+    if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+        $('#sideBar2').css({                      // scroll to that element or below it
+            position: 'fixed',
+            top: '50px'
+        });
+    } else {                                   // apply position: static
+        $('#sideBar2').css({                      // if you scroll above it
+            position: 'static'
+        });
+    }
+
+});
+</script>
+<script>
+    body {
+    overflow-x: hidden !important;
+}
+.container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+</script>
+</html>

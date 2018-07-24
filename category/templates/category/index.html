@@ -1,0 +1,354 @@
+
+{% extends 'category/base.html' %}
+
+
+{% block body %}
+
+
+     <!-- to the right of side bar -->
+      		<div class="col-md-9" id="mainCol">
+
+              	<br>
+
+              	<h2 id="sec0">Computer and Gamming </h2>
+
+
+            <!-- Carousel  -->
+                <div class="container" id="myContainer">
+    <div class="row">
+		<div class="col-md-10">
+                <div id="Carousel" class="carousel slide">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                <div class="item active">
+                	<div class="row">
+						{% for item in item_list %}
+                	  <div class="col-md-4"><a href="{% url 'computer:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}
+					</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+						{% for item in item_lista %}
+                		<div class="col-md-4"><a href="{% url 'computer:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+                		{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+						{% for item in item_listb %}
+                		<div class="col-md-4"><a href="{% url 'computer:detail' item.id %}" class="thumbnail"><img src="{{item.item_logo.url}}" style="width: 426px;height: 240px;"></a></div>
+					{% endfor %}
+					</div>
+                </div><!--.item-->
+
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+
+		</div>
+	</div>
+</div><!--.container-->
+
+
+              	<h2 id="sec1">Automobiles</h2>
+
+            <!-- Carousel  -->
+                <div class="container" id="myContainer">
+    <div class="row">
+		<div class="col-md-10">
+                <div id="Carousel2" class="carousel slide">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel2" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel2" data-slide-to="1"></li>
+                    <li data-target="#Carousel2" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                <div class="item active">
+                	<div class="row">
+						{% for item in item_list1 %}
+                		<div class="col-md-4"><a href="{% url 'automobiles:detail' item.id %}" class="thumbnail"><img src="{{item.item_logo.url}}" style="width: 426px;height: 240px;"></a></div>
+					{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+						{% for item in item_list1a %}
+                		<div class="col-md-4"><a href="{% url 'automobiles:detail' item.id %}" class="thumbnail"><img src="{{item.item_logo.url}}" alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+						{% for item in item_list1a %}
+                		<div class="col-md-4"><a href="{% url 'automobiles:detail' item.id %}" class="thumbnail"><img src="{{item.item_logo.url}}" alt="Image" style="width: 426px;height: 240px;"></a></div>
+                		{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+
+		</div>
+	</div>
+</div><!--.container-->
+
+              	<hr>
+
+              	<h2 id="sec2">Accessories and Apparels</h2>
+
+            <!-- Carousel  -->
+                <div class="container" id="myContainer">
+    <div class="row">
+		<div class="col-md-10">
+                <div id="Carousel3" class="carousel slide">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                <div class="item active">
+                	<div class="row">
+                	  {% for item in item_list3 %}
+                		<div class="col-md-4"><a href="{% url 'apparels:detail' item.id %}" class="thumbnail"><img src="{{item.item_logo.url}}" alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+                		{% for item in item_list3a %}
+                		<div class="col-md-4"><a href="{% url 'computer:detail' item.id %}" class="thumbnail"><img src="{{item.item_logo.url}}" alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+                		{% for item in item_list3b %}
+                		<div class="col-md-4"><a href="{% url 'computer:detail' item.id %}" class="thumbnail"><img src="{{item.item_logo.url}}" alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}
+					</div><!--.row-->
+                </div><!--.item-->
+
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+
+		</div>
+	</div>
+</div><!--.container-->
+
+
+              	<hr>
+
+              	<h2 id="sec3">Consumer Electronics</h2>
+
+
+            <!-- Carousel  -->
+                <div class="container" id="myContainer">
+    <div class="row">
+		<div class="col-md-10">
+                <div id="Carousel4" class="carousel slide">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                <div class="item active">
+                	<div class="row">
+						{% for item in item_list4 %}
+                	  <div class="col-md-4"><a href="{% url 'electronics:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+					{% endfor %}
+					</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+                			{% for item in item_list4a %}
+                	  <div class="col-md-4"><a href="{% url 'electronics:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+					{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+                			{% for item in item_list4b %}
+                	  <div class="col-md-4"><a href="{% url 'electronics:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+					{% endfor %}
+					</div><!--.row-->
+                </div><!--.item-->
+
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+
+		</div>
+	</div>
+</div><!--.container-->
+
+                <hr>
+
+              	<h2 id="sec4">Mobile and Accessories</h2>
+
+            <!-- Carousel  -->
+                <div class="container" id="myContainer">
+    <div class="row">
+		<div class="col-md-10">
+                <div id="Carousel5" class="carousel slide">
+<!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                <div class="item active">
+                	<div class="row">
+						{% for item in item_list2 %}
+                	  <div class="col-md-4"><a href="{% url 'mobiles:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}
+					</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+                		{% for item in item_list2a %}
+                	  <div class="col-md-4"><a href="{% url 'mobiles:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                	<div class="row">
+                		{% for item in item_list2b %}
+                	  <div class="col-md-4"><a href="{% url 'mobiles:detail' item.id %}" class="thumbnail"><img src={{item.item_logo.url}} alt="Image" style="width: 426px;height: 240px;"></a></div>
+						{% endfor %}
+                	</div><!--.row-->
+                </div><!--.item-->
+
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+
+		</div>
+	</div>
+</div><!--.container-->
+                <hr>
+
+</div>
+
+    <style>
+
+    body{padding-top:20px;}
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* The controlsy */
+.carousel-control {
+	left: -12px;
+    height: 40px;
+	width: 40px;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    margin-top: 90px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* The indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: -10px;
+	margin-right: -19px;
+}
+/* The colour of the indicators */
+.carousel-indicators li {
+	background: #cecece;
+}
+.carousel-indicators .active {
+background: #428bca;
+}
+
+    #mainCol{
+        max-width: 100%;
+    overflow-x: hidden;
+    }
+    #myContainer{
+        margin-left: -10px;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel2').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel3').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel4').carousel({
+        interval: 5000
+    })
+});
+</script>
+<script>
+    $(document).ready(function() {
+    $('#Carousel5').carousel({
+        interval: 5000
+    })
+});
+</script>
+{% endblock %}
+
